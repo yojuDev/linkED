@@ -1,0 +1,379 @@
+main{
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    .form-container{
+        min-width: 350px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .input-group{
+        display: flex;
+        flex-direction: column;
+
+        gap: 0.5rem;
+
+
+        input{
+            border: none;
+            outline: none;
+            padding-inline: 1rem;
+            padding-block: 0.75rem;
+            border-radius: 0.75rem;
+        }
+    }
+
+    a{
+        color: #e1034d;
+        text-decoration: none;
+    }
+}
+
+.register-page,
+.login-page {
+    justify-content: center;
+    align-items: center;
+    padding: clamp(1rem, 3vw, 2.25rem);
+    background:
+        linear-gradient(120deg, rgba(3, 7, 18, 0.9), rgba(15, 23, 42, 0.76)),
+        url("../../assets/juit-campus.jpeg") center / cover no-repeat fixed;
+    color: #f8fafc;
+}
+
+.register-shell,
+.login-shell {
+    width: min(1180px, 100%);
+    display: grid;
+    gap: clamp(1rem, 3vw, 2rem);
+    align-items: stretch;
+}
+
+.register-shell {
+    grid-template-columns: minmax(280px, 0.88fr) minmax(340px, 1.12fr);
+}
+
+.login-shell {
+    grid-template-columns: minmax(340px, 0.82fr) minmax(320px, 1.18fr);
+}
+
+.register-showcase,
+.register-card,
+.login-showcase,
+.login-card {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 8px;
+    background: rgba(7, 13, 25, 0.7);
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.36);
+    backdrop-filter: blur(14px);
+}
+
+.register-showcase,
+.login-showcase {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 620px;
+    padding: clamp(1.4rem, 3vw, 2rem);
+    isolation: isolate;
+}
+
+.register-showcase::before,
+.login-showcase::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(15, 23, 42, 0.1), rgba(3, 7, 18, 0.86)),
+        url("../../assets/juit-campus.jpeg") center / cover no-repeat;
+    z-index: -2;
+}
+
+.register-showcase::after,
+.login-showcase::after {
+    content: "";
+    position: absolute;
+    inset: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+    z-index: -1;
+}
+
+.auth-pill,
+.eyebrow {
+    width: fit-content;
+    border: 1px solid rgba(134, 239, 172, 0.42);
+    background: rgba(6, 78, 59, 0.36);
+    color: #bbf7d0;
+    border-radius: 999px;
+    padding: 0.42rem 0.75rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.register-showcase h1,
+.login-showcase h2 {
+    max-width: 540px;
+    margin-top: 1rem;
+    font-size: clamp(2.2rem, 5vw, 4.8rem);
+    line-height: 1;
+    letter-spacing: 0;
+}
+
+.register-showcase p:not(.auth-pill),
+.login-showcase p:not(.auth-pill) {
+    max-width: 520px;
+    margin-top: 1rem;
+    color: #dbeafe;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.showcase-grid,
+.login-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.showcase-grid div,
+.login-metrics div {
+    padding: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 8px;
+    background: rgba(15, 23, 42, 0.66);
+}
+
+.showcase-grid strong,
+.showcase-grid span,
+.login-metrics strong,
+.login-metrics span {
+    display: block;
+}
+
+.showcase-grid strong,
+.login-metrics strong {
+    font-size: 1.15rem;
+    color: #ffffff;
+}
+
+.showcase-grid span,
+.login-metrics span {
+    margin-top: 0.2rem;
+    color: #cbd5e1;
+    font-size: 0.84rem;
+}
+
+.register-card,
+.login-card {
+    min-width: 0;
+    padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.register-card .form-heading,
+.login-card .form-heading {
+    display: grid;
+    gap: 0.55rem;
+    margin-bottom: 1.1rem;
+}
+
+.register-card h2,
+.login-card h1 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1;
+}
+
+.register-card .form-heading span,
+.login-card .form-heading span {
+    color: #cbd5e1;
+    line-height: 1.55;
+}
+
+.register-card form,
+.login-card form {
+    gap: 1rem;
+}
+
+.register-card .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+}
+
+.register-card .input-group,
+.login-card .input-group {
+    gap: 0.42rem;
+}
+
+.register-card .input-group--wide {
+    grid-column: 1 / -1;
+}
+
+.register-card label,
+.login-card label {
+    color: #e2e8f0;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.register-card input,
+.register-card select,
+.register-card textarea,
+.login-card input {
+    width: 100%;
+    border: 1px solid rgba(148, 163, 184, 0.34);
+    outline: none;
+    padding: 0.82rem 0.9rem;
+    border-radius: 0.75rem;
+    background: rgba(15, 23, 42, 0.82);
+    color: #ffffff;
+    font: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.register-card textarea {
+    min-height: 96px;
+    resize: vertical;
+}
+
+.register-card input::placeholder,
+.register-card textarea::placeholder,
+.login-card input::placeholder {
+    color: #94a3b8;
+}
+
+.register-card input:focus,
+.register-card select:focus,
+.register-card textarea:focus,
+.login-card input:focus {
+    border-color: #38bdf8;
+    background: rgba(15, 23, 42, 0.94);
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.16);
+}
+
+.register-card .button,
+.login-card .button {
+    min-height: 50px;
+    border-radius: 0.75rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #e1034d, #f97316);
+    box-shadow: 0 18px 34px rgba(225, 3, 77, 0.26);
+}
+
+.login-card {
+    align-self: center;
+    max-width: 470px;
+}
+
+.login-card form {
+    margin-top: 1.2rem;
+}
+
+.login-showcase {
+    min-height: 560px;
+}
+
+.login-showcase::before {
+    background:
+        linear-gradient(90deg, rgba(3, 7, 18, 0.28), rgba(3, 7, 18, 0.88)),
+        url("../../assets/juit-campus.jpeg") center / cover no-repeat;
+}
+
+.login-divider {
+    position: relative;
+    margin-top: 1.1rem;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.82rem;
+}
+
+.login-divider::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    background: rgba(148, 163, 184, 0.28);
+}
+
+.login-divider span {
+    position: relative;
+    display: inline-block;
+    padding: 0 0.75rem;
+    background: rgba(7, 13, 25, 0.95);
+}
+
+.form-error {
+    color: #fecaca;
+    margin-top: 0.85rem;
+    padding: 0.8rem;
+    border: 1px solid rgba(248, 113, 113, 0.35);
+    border-radius: 0.75rem;
+    background: rgba(127, 29, 29, 0.32);
+}
+
+.auth-switch {
+    margin-top: 0.9rem;
+    color: #cbd5e1;
+}
+
+@media (max-width: 980px) {
+    .register-shell,
+    .login-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .register-showcase,
+    .login-showcase {
+        min-height: auto;
+    }
+
+    .login-card {
+        max-width: none;
+        order: 2;
+    }
+
+    .login-showcase {
+        order: 1;
+    }
+}
+
+@media (max-width: 640px) {
+    .register-page,
+    .login-page {
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .register-card,
+    .register-showcase,
+    .login-card,
+    .login-showcase {
+        border-radius: 8px;
+    }
+
+    .register-card .form-grid,
+    .showcase-grid,
+    .login-metrics {
+        grid-template-columns: 1fr;
+    }
+}
